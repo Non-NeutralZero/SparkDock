@@ -32,8 +32,6 @@ RUN apt-get update --yes && \
    #   https://github.com/krallin/tini#why-tini for details.
    tini \
    wget \
-   curl \
-   unzip \
    iputils-ping \
    openssh-server \
    iputils-ping && \
@@ -70,7 +68,7 @@ RUN apt-get update --yes && \
 # INSTALL Spark
 # INSTALL all OS dependencies for Spark
 ENV SPARK_VERSION 2.4.7
-ENV APACHE_SPARK_VERSION="${spark_version}"
+ENV APACHE_SPARK_VERSION="${SPARK_VERSION}"
 ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-without-hadoop
 ENV SPARK_HOME /usr/spark-${SPARK_VERSION}
 ENV SPARK_DIST_CLASSPATH="$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/*"

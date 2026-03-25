@@ -9,7 +9,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 10M
+          memory: 10G
     image: pysparkjupyter_img
     environment:
       JUPYTER_ENABLE_LAB: "yes"
