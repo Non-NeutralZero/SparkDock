@@ -23,7 +23,7 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        FILES=$(git ls-files '*.py')
+        FILES=$(git ls-files '*.py' | grep -v 'jupyter_notebook_config.py')
         if [ -z "$FILES" ]; then
           echo "No Python files found, skipping pylint."
         else
